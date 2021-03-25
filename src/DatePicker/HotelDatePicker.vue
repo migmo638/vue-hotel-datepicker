@@ -129,9 +129,10 @@
             :nextPeriodDisableDates="nextPeriodDisableDates"
             :options="dayOptions"
             :priceSymbol="priceSymbol"
+            :priceDecimals="priceDecimals"
+            :showPrice="showPrice"
             :screenSize="screenSize"
             :showCustomTooltip="showCustomTooltip"
-            :showPrice="showPrice"
             :disabledDates="disabledDates"
             :periodDates="periodDates"
             :sortedDisabledDates="sortedDisabledDates"
@@ -184,9 +185,10 @@
               :nextPeriodDisableDates="nextPeriodDisableDates"
               :options="dayOptions"
               :priceSymbol="priceSymbol"
+              :priceDecimals="priceDecimals"
+              :showPrice="showPrice"
               :screenSize="screenSize"
               :showCustomTooltip="false"
-              :showPrice="showPrice"
               :sortedDisabledDates="sortedDisabledDates"
               :sortedPeriodDates="sortedPeriodDates"
               :tooltipMessage="customTooltipMessage"
@@ -211,7 +213,7 @@ import fecha from 'fecha'
 import Month from './components/Month.vue'
 import DateInput from './components/DateInput.vue'
 import Helpers from '../helpers'
-import i18nDefaults from '../i18n/en'
+import i18nDefaults from '../../public/i18n/en'
 
 export default {
   name: 'HotelDatePicker',
@@ -321,6 +323,10 @@ export default {
     priceSymbol: {
       type: String,
       default: '',
+    },
+    priceDecimals: {
+      type: [Number, null],
+      default: 0,
     },
     showPrice: {
       type: Boolean,
